@@ -4,10 +4,10 @@ import FormInput from '../../components/formInput';
 import Heading from '../../components/heading';
 import { useRef, useState } from 'react';
 import axios from 'axios';
-import Image from '../../components/image';
 
 const Contact = () => {
   const [formReady, setFormReady] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const refs = {
     firstName: useRef(''),
@@ -49,6 +49,8 @@ const Contact = () => {
       }
     } catch (err) {
       console.error(err);
+      setErrorMsg('An error occurred, please try again later');
+      setTimeout(() => setErrorMsg(''), 5000);
     }
   };
 
@@ -118,6 +120,7 @@ const Contact = () => {
           >
             submit now
           </button>
+          {errorMsg && <Text>{errorMsg}</Text>}
         </form>
       </div>
     </div>
