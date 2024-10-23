@@ -4,6 +4,7 @@ import FormInput from '../../components/formInput';
 import Heading from '../../components/heading';
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import Image from '../../components/image';
 
 const Contact = () => {
   const [formReady, setFormReady] = useState(false);
