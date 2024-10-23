@@ -24,7 +24,7 @@ const Contact = () => {
 
   const checkFormReady = () => {
     const allIsFilled = Object.values(refs).every(
-      (ref) => ref.current.value !== ''
+      (ref) => ref.current.value.trim() !== ''
     );
     setFormReady(allIsFilled);
   };
